@@ -1,0 +1,43 @@
+package exercicio01;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	
+	private List<ListaTelefonica> lista = new ArrayList<>();
+	
+	public Main() {
+		
+		Residencial r1 = new Residencial("João da Silva","4733223232","Rua Pedro I, 1234 – Gaspar / SC",LocalDate.parse("15/10/2016", formatter),false);
+		Residencial r2 = new Residencial("Mayarinha","4721301234","Rua Antonio da Veiga, 234 – Blumenau / SC",LocalDate.parse("12/02/2020", formatter),true);
+		
+		lista.add(r1);
+		lista.add(r2);
+		
+		Comercial c1 = new Comercial("XPTO Ltda", "4733111000","Rua Pedro I, 1234 – Blumenau / SC", LocalDate.parse("04/03/2018", formatter), "Serviços");
+		Comercial c2 = new Comercial("Maria Antonina ME", "4733331212","Rua Apolônia, 4 – Indaial / SC", LocalDate.parse("01/01/2019", formatter), "Comércio");
+		
+		lista.add(c1);
+		lista.add(c2);
+		
+		Especializada e1 = new Especializada("Mil Serviços","4741411000", "Rua 7 de Setembro, 1000 – Blumenau / SC", LocalDate.parse("10/08/2021", formatter), 3800);
+		lista.add(e1);
+		
+		
+		
+		for (ListaTelefonica listatelefonica: lista) {
+			System.out.println(listatelefonica);
+					}
+		
+	}
+		
+	public static void main(String[] args) {
+		new Main();
+
+	}
+
+}
